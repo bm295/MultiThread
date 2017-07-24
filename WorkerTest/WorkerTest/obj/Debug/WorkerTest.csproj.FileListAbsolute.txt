@@ -1,0 +1,5 @@
+D:\github\MultiThread\WorkerTest\WorkerTest\bin\Debug\WorkerTest.exe.config
+D:\github\MultiThread\WorkerTest\WorkerTest\bin\Debug\WorkerTest.exe
+D:\github\MultiThread\WorkerTest\WorkerTest\bin\Debug\WorkerTest.pdb
+D:\github\MultiThread\WorkerTest\WorkerTest\obj\Debug\WorkerTest.exe
+D:\github\MultiThread\WorkerTest\WorkerTest\obj\Debug\WorkerTest.pdb
