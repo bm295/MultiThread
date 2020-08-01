@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace DomainModel.Interface
+namespace Application.Interface
 {
     public interface IProgram
     {

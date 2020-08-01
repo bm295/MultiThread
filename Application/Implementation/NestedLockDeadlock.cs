@@ -1,9 +1,7 @@
-﻿using DomainModel.Interface;
-using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Application.Interface;
+using DomainModel.Implementation.NestedLockDeadlock;
 
-namespace DomainModel.Implementation.NestedLockDeadlock
+namespace Application.Implementation.NestedLockDeadlock
 {
     public class NestedLockDeadlock : IProgram
     {

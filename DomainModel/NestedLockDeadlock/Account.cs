@@ -1,6 +1,6 @@
 ﻿namespace DomainModel.Implementation.NestedLockDeadlock
 {
-    internal class Account
+    public class Account
     {
         public int Id { get; set; }
     }

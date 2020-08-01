@@ -4,13 +4,13 @@ using System.Threading.Tasks;
 
 namespace DomainModel.Implementation.NestedLockDeadlock
 {
-    internal class TransferManager
+    public class TransferManager
     {
         public TransferManager()
         {
         }
 
-        internal void DoDoubleTransfer(Account account1, Account account2)
+        public void DoDoubleTransfer(Account account1, Account account2)
         {
             Console.WriteLine("Starting transfer...");
             var task1 = Transfer(account1, account2, 500);

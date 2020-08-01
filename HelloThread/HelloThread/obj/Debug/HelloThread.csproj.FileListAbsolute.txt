@@ -1,6 +1,0 @@
-D:\github\MultiThread\HelloThread\HelloThread\bin\Debug\HelloThread.exe.config
-D:\github\MultiThread\HelloThread\HelloThread\bin\Debug\HelloThread.exe
-D:\github\MultiThread\HelloThread\HelloThread\bin\Debug\HelloThread.pdb
-D:\github\MultiThread\HelloThread\HelloThread\obj\Debug\HelloThread.csprojResolveAssemblyReference.cache
-D:\github\MultiThread\HelloThread\HelloThread\obj\Debug\HelloThread.exe
-D:\github\MultiThread\HelloThread\HelloThread\obj\Debug\HelloThread.pdb

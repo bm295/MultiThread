@@ -1,16 +1,17 @@
-﻿using System;
+﻿using Application.Interface;
+using System;
 using System.Threading;
 
-namespace HelloThread
+namespace Application.Implementation
 {
-    class Program
+    class HelloThread : IProgram
     {
-        static void Main(string[] args)
+        public void Run()
         {
-            Console.WriteLine("Create new Thread...\n");
+            Console.WriteLine("Create new Thread writing B...\n");
             var newThread = new Thread(WriteB);
 
-            Console.WriteLine("Start newThread...\n");
+            Console.WriteLine("Start newThread writing B...\n");
             newThread.Start();
 
             Console.WriteLine("Call Write('-') in main Thread...\n");
@@ -20,11 +21,10 @@ namespace HelloThread
                 Thread.Sleep(70);
             }
 
-            Console.WriteLine("Main Thread finished!\n");
-            Console.Read();
+            Console.WriteLine("\nMain Thread finished!\n");
         }
 
-        public static void WriteB()
+        public void WriteB()
         {
             for (var i = 0; i < 100; i++)
             {

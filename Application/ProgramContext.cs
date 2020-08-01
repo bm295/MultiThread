@@ -1,5 +1,6 @@
-﻿using DomainModel.Implementation.NestedLockDeadlock;
-using DomainModel.Interface;
+﻿using Application.Implementation;
+using Application.Implementation.NestedLockDeadlock;
+using Application.Interface;
 using System;
 using System.Collections.Generic;
 
@@ -13,7 +14,8 @@ namespace Application
         {
             _programs = new List<IProgram>
             {
-                new NestedLockDeadlock()
+                new NestedLockDeadlock(),
+                new HelloThread()
             };
         }
 
