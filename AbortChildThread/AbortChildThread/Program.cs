@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System;
 using System.Threading;
-using System.Threading.Tasks;
 
 namespace AbortChildThread
 {
@@ -11,24 +7,33 @@ namespace AbortChildThread
     {
         static void Main(string[] args)
         {
+            BoxingUnboxingDemo.Run();
+            Console.WriteLine();
+
             Console.WriteLine("Da luong trong C#");
             Console.WriteLine("Vi du minh hoa huy Thread");
             Console.WriteLine("-------------------------------------");
 
-            var childRef = new ThreadStart(CallToChildThread);
+            using var cts = new CancellationTokenSource();
+            var token = cts.Token;
+
             Console.WriteLine("Trong Main Thread: tao Thread con.");
-            var childThread = new Thread(childRef);
+            var childThread = new Thread(() => CallToChildThread(token));
             childThread.Start();
 
             Thread.Sleep(2000);
 
-            Console.WriteLine("Trong Main Thread: huy Thread con.");
-            childThread.Abort();
+            Console.WriteLine("Trong Main Thread: yeu cau dung Thread con.");
+            cts.Cancel();
+            childThread.Join();
 
-            Console.ReadKey();
+            if (!Console.IsInputRedirected)
+            {
+                Console.ReadKey();
+            }
         }
 
-        public static void CallToChildThread()
+        public static void CallToChildThread(CancellationToken cancellationToken)
         {
             try
             {
@@ -36,19 +41,20 @@ namespace AbortChildThread
 
                 for (var i = 0; i <= 10; i++)
                 {
+                    cancellationToken.ThrowIfCancellationRequested();
                     Thread.Sleep(500);
                     Console.WriteLine(i);
                 }
 
                 Console.WriteLine("Thread con hoan thanh.");
             }
-            catch (ThreadAbortException e)
+            catch (OperationCanceledException)
             {
-                Console.WriteLine("Thread Abort Exception!!!");
+                Console.WriteLine("Thread con da nhan yeu cau dung.");
             }
             finally
             {
-                Console.WriteLine("Khong the bat Thread Exception!!!");
+                Console.WriteLine("Thread con ket thuc.");
             }
         }
     }
