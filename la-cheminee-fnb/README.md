@@ -14,6 +14,7 @@ This project has been refactored to follow **Hexagonal Architecture (Ports & Ada
   7) Process payment
 - Inventory tracking and stock deduction per ordered item.
 - Payment processing via an outbound port (`IPaymentGateway`) with simulated adapter.
+- Queued kitchen dispatch handled by a background worker behind `IKitchenNotifier`.
 - Basic occupancy reporting.
 - Dependency Injection with `Microsoft.Extensions.DependencyInjection`.
 - Asynchronous application use cases and ports.
